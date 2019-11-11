@@ -1,0 +1,27 @@
+Employee Portal
+
+Front End - Angular 8
+
+Technologies required to run:
+
+Angular CLI: 8.3.17
+Node: 12.13.0
+
+Instructions to build:
+
+1) After taking a pull navigate to the project folder
+2) Run the ng serve command in the 
+
+Back End - Java 12
+
+Technologies required to run:
+
+Jdk-12.0.2
+Eclipse Juno
+
+Instructions to build:
+
+1) After taking a pull import the project in Eclipse
+2) Right Click on project navigate to Run AS -> Maven Clean
+3) Right Click on project navigate to Run AS -> Maven install
+4) Right Click on project navigate to Run AS -> Spring Boot App
