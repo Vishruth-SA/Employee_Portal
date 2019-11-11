@@ -1,0 +1,76 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Status</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Employee Saved Successfully</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+<div class="col-md-12">
+    <div class="col-md-12" style="padding-left: 600px;padding-top: 50px;">
+      <form [formGroup]="employeeForm">
+           <table>
+               <tr>
+                   <td>
+                       First Name
+                   </td>
+                   <td>
+                        <input id="typeahead-basic" formControlName="firstName">
+                   </td>
+               </tr>
+               <tr>
+                    <td>
+                        Last Name
+                    </td>
+                    <td>
+                         <input  id="typeahead-basic" type="text"  formControlName="lastName">
+                    </td>
+                </tr>
+                <tr>
+                        <td>
+                            Gender
+                        </td>
+                        <td>
+                                <div ngbDropdown>
+                                        <button class="btn btn-outline-primary" id="dropdownConfig"  style="width:180px;" ngbDropdownToggle>{{selectedGender}}</button>
+                                        <div ngbDropdownMenu aria-labelledby="dropdownConfig">
+                                          <button ngbDropdownItem *ngFor="let gender of genders" (click)="ChangeGender(gender)">{{gender}}</button>
+                                          <!-- <button ngbDropdownItem>Another Action</button>
+                                          <button ngbDropdownItem>Something else is here</button> -->
+                                        </div>
+                                      </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Date of Birth
+                        </td>
+                        <td>
+                            <input type="date" ngbDatepicker #d="ngbDatepicker" formControlName="dateOfBirth" style="width: 180px;"/>
+                             </td>
+                    </tr>     
+                    <tr>
+                            <td>
+                                Department
+                            </td>
+                            <div ngbDropdown>
+                                    <button class="btn btn-outline-primary" id="dropdownConfig" ngbDropdownToggle style="width:180px;">{{selectedDepartment}}</button>
+                                    <div ngbDropdownMenu aria-labelledby="dropdownConfig">
+                                      <button ngbDropdownItem *ngFor="let dept of departments" (click)="ChangeDepatment(dept)">{{dept}}</button>
+                                        </div>
+                                  </div>
+                        </tr>           
+           </table>
+      </form>   
+      <br> 
+      <div style="padding-left: 120px;">
+      <button class="btn-primary" (click)="onSave()">Register</button>
+    </div>
+    </div>
+</div>
